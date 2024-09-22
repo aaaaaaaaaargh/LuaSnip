@@ -28,7 +28,8 @@ ${NVIM_PATH}:
 	git -C ${NVIM_PATH} worktree add ${NVIM_0.9_PATH_REL} v0.9.0
 
 # |: don't update `nvim` if `${NVIM_PATH}` is changed.
-nvim: | ${NVIM_PATH}
+# nvim: | ${NVIM_PATH}
+nvim:
 	# only update master
 	git -C ${NVIM_MASTER_PATH} fetch origin master --depth 1
 	git -C ${NVIM_MASTER_PATH} checkout FETCH_HEAD
